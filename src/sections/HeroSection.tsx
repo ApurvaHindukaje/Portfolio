@@ -14,7 +14,7 @@ export const HeroSection: React.FC = () => {
       <FadeIn
         delay={0.6}
         y={30}
-        className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:w-[360px] sm:translate-y-0 md:w-[440px] lg:w-[520px]"
+        className="pointer-events-none absolute left-1/2 bottom-0 z-10 w-[280px] -translate-x-1/2 sm:top-1/2 sm:-translate-y-1/2 sm:w-[360px] md:w-[440px] lg:w-[520px]"
       >
         <div className="pointer-events-auto">
           <Magnet
