@@ -36,7 +36,7 @@ export const HeroSection: React.FC = () => {
         {/* Hero Heading */}
         <div className="overflow-hidden">
           <FadeIn delay={0.15} y={40}>
-            <h1 className="hero-heading mt-6 w-full whitespace-nowrap text-center text-[10vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:text-[11vw] md:-mt-5 md:text-[12vw] lg:text-[10vw]">
+            <h1 className="hero-heading mt-6 w-full text-center text-[10vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:whitespace-nowrap sm:text-[11vw] md:-mt-5 md:text-[12vw] lg:text-[10vw]">
 
               Hi, i&apos;m apurva
             </h1>
