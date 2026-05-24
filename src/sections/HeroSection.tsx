@@ -32,16 +32,14 @@ export const HeroSection: React.FC = () => {
         </div>
       </FadeIn>
 
-      <div className="relative z-20 flex w-full flex-col">
+      <div className="relative z-20 flex w-full flex-col overflow-hidden">
         {/* Hero Heading */}
-        <div className="overflow-hidden">
-          <FadeIn delay={0.15} y={40}>
-            <h1 className="hero-heading mt-6 w-full text-center text-[10vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:whitespace-nowrap sm:text-[11vw] md:-mt-5 md:text-[12vw] lg:text-[10vw]">
+        <FadeIn delay={0.15} y={40}>
+          <h1 className="hero-heading mt-6 w-full text-center text-[10vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:whitespace-nowrap sm:text-[11vw] md:-mt-5 md:text-[12vw] lg:text-[10vw]">
 
-              Hi, i&apos;m apurva
-            </h1>
-          </FadeIn>
-        </div>
+            Hi, i&apos;m apurva
+          </h1>
+        </FadeIn>
 
         {/* Bottom Bar */}
         <div className="flex w-full items-end justify-between pb-7 sm:pb-8 md:pb-10">
