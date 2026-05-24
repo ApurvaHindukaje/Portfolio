@@ -7,7 +7,7 @@ const services = [
   {
     icon: Code2,
     title: 'Full-Stack Development',
-    description: 'End-to-end web application development using React, TypeScript, Node.js, and modern frameworks. Building scalable and maintainable solutions.',
+    description: 'End-to-end web application development using Next,js, React, TypeScript, FastAPI, Python and modern frameworks. Building scalable and maintainable solutions.',
     features: ['React & Next.js', 'TypeScript', 'FastAPI & Pyton', 'Database Design'],
   },
   {

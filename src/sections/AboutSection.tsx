@@ -5,8 +5,8 @@ import { Code2, Palette, Zap, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { icon: Code2, label: 'Full-Stack Development', desc: 'React, TypeScript, Node.js, Python' },
-  { icon: Palette, label: 'UI/UX Design', desc: 'Tailwind CSS, Framer Motion, Figma' },
+  { icon: Code2, label: 'Full-Stack Development', desc: 'Next.js, React, TypeScript, FastAPI, Python' },
+  { icon: Palette, label: 'UI/UX Design', desc: 'Tailwind CSS'},
   { icon: Zap, label: 'Performance', desc: 'Optimization, Scalability, Best Practices' },
   { icon: Users, label: 'Collaboration', desc: 'Team Leadership, Communication, Agile' },
 ];
