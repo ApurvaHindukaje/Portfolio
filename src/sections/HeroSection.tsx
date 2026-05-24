@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar } from '../components/Navbar';
-import { ContactButton } from '../components/ContactButton';
 import { FadeIn } from '../components/FadeIn';
 import { Magnet } from '../components/Magnet';
 
@@ -50,10 +49,6 @@ export const HeroSection: React.FC = () => {
             <p className="max-w-[160px] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]" style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}>
               A software developer driven by building clean, efficient, and high-impact applications.
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.5} y={20}>
-            {/* <ContactButton /> */}
           </FadeIn>
         </div>
       </div>
