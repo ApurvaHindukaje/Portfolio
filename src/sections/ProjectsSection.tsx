@@ -110,28 +110,36 @@ export const ProjectsSection: React.FC = () => {
     <section
       id="projects"
       ref={containerRef}
-      className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pb-32 pt-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pt-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pt-32"
+      className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#0C0C0C] to-[#1a1a1a] px-4 py-20 sm:px-8 md:px-10"
     >
-      <FadeIn delay={0}>
-        <h2 className="hero-heading mb-16 text-center font-black uppercase sm:mb-20 md:mb-28" style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}>
-          Project
-        </h2>
-      </FadeIn>
+      {/* Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-0 top-0 h-96 w-96 bg-gradient-to-br from-[#3a6fa8] to-transparent opacity-5 blur-3xl"></div>
+        <div className="absolute right-0 bottom-0 h-96 w-96 bg-gradient-to-tl from-[#2a4a7a] to-transparent opacity-5 blur-3xl"></div>
+      </div>
 
-      <div className="relative mx-auto max-w-7xl">
-        {PROJECTS.map((project, i) => {
-          const targetScale = 1 - (PROJECTS.length - 1 - i) * 0.03;
-          return (
-            <ProjectCard
-              key={project.num}
-              project={project}
-              index={i}
-              progress={scrollYProgress}
-              range={[i * 0.25, 1]}
-              targetScale={targetScale}
-            />
-          );
-        })}
+      <div className="relative z-10 w-full">
+        <FadeIn delay={0} className="w-full text-center">
+          <h2 className="hero-heading font-black uppercase leading-none tracking-tight" style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}>
+            Featured Projects
+          </h2>
+        </FadeIn>
+
+        <div className="relative mx-auto mt-16 max-w-7xl space-y-8 sm:mt-20 md:mt-24">
+          {PROJECTS.map((project, i) => {
+            const targetScale = 1 - (PROJECTS.length - 1 - i) * 0.03;
+            return (
+              <ProjectCard
+                key={project.num}
+                project={project}
+                index={i}
+                progress={scrollYProgress}
+                range={[i * 0.25, 1]}
+                targetScale={targetScale}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );

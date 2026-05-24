@@ -1,61 +1,99 @@
 import React from 'react';
 import { FadeIn } from '../components/FadeIn';
+import { Code2, Smartphone } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const SERVICES = [
+const services = [
   {
-    num: '01',
-    name: '3D Modeling',
-    desc: 'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
+    icon: Code2,
+    title: 'Full-Stack Development',
+    description: 'End-to-end web application development using React, TypeScript, Node.js, and modern frameworks. Building scalable and maintainable solutions.',
+    features: ['React & Next.js', 'TypeScript', 'FastAPI & Pyton', 'Database Design'],
   },
   {
-    num: '02',
-    name: 'Rendering',
-    desc: 'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
-  },
-  {
-    num: '03',
-    name: 'Motion Design',
-    desc: 'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
-  },
-  {
-    num: '04',
-    name: 'Branding',
-    desc: 'Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence.',
-  },
-  {
-    num: '05',
-    name: 'Web Design',
-    desc: 'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+    icon: Smartphone,
+    title: 'Responsive Web Design',
+    description: 'Creating beautiful, responsive websites that work flawlessly across all devices and screen sizes.',
+    features: ['Mobile-First', 'Tailwind CSS', 'Cross-browser', 'Performance'],
   },
 ];
 
 export const ServicesSection: React.FC = () => {
   return (
-    <section id="services" className="relative z-10 -mt-10 rounded-t-[40px] bg-[#FFFFFF] px-5 py-20 text-[#0C0C0C] sm:-mt-12 sm:rounded-t-[50px] sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32">
-      <FadeIn delay={0}>
-        <h2 className="mb-16 text-center font-black uppercase sm:mb-20 md:mb-28" style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}>
-          Services
-        </h2>
-      </FadeIn>
+    <section id="services" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#0C0C0C] to-[#1a1a1a] px-4 py-20 sm:px-8 md:px-10">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute right-0 top-0 h-96 w-96 bg-gradient-to-bl from-[#3a6fa8] to-transparent opacity-5 blur-3xl"></div>
+        <div className="absolute left-0 bottom-0 h-96 w-96 bg-gradient-to-tr from-[#2a4a7a] to-transparent opacity-5 blur-3xl"></div>
+      </div>
 
-      <div className="mx-auto flex max-w-5xl flex-col">
-        {SERVICES.map((service, i) => (
-          <FadeIn key={service.num} delay={i * 0.1}>
-            <div className="flex flex-col gap-6 border-t-[1px] border-[rgba(12,12,12,0.15)] py-8 sm:flex-row sm:items-center sm:gap-10 sm:py-10 md:gap-16 md:py-12">
-              <div className="font-black leading-none" style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}>
-                {service.num}
-              </div>
-              <div className="flex flex-col gap-2 sm:gap-4">
-                <h3 className="font-medium uppercase" style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}>
-                  {service.name}
-                </h3>
-                <p className="max-w-2xl font-light leading-relaxed opacity-60" style={{ fontSize: 'clamp(0.85rem, 1.6vw, 1.25rem)' }}>
-                  {service.desc}
-                </p>
-              </div>
-            </div>
-          </FadeIn>
-        ))}
+      <div className="relative z-10 w-full max-w-6xl">
+        {/* Section Title */}
+        <FadeIn delay={0} y={40} className="w-full text-center">
+          <h2 className="hero-heading font-black uppercase leading-none tracking-tight" style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}>
+            Services
+          </h2>
+        </FadeIn>
+
+        {/* Subtitle */}
+        <FadeIn delay={0.2} y={30} className="mt-6 w-full text-center sm:mt-8">
+          <p className="mx-auto max-w-2xl font-light text-[#B0B8C4]" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)' }}>
+            Comprehensive solutions for your digital needs, from concept to deployment
+          </p>
+        </FadeIn>
+
+        {/* Services Grid */}
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:mt-20 md:mt-24 md:grid-cols-2 md:gap-8">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <FadeIn
+                key={index}
+                delay={0.1 * (index + 1)}
+                y={30}
+              >
+                <motion.div
+                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                  className="group rounded-2xl border border-[#2a3a4a] bg-gradient-to-br from-[#1a2a3a] to-[#0C0C0C] p-8 transition-all duration-300 hover:border-[#4a6a8a] hover:shadow-2xl hover:shadow-blue-900/20"
+                >
+                  <div className="mb-6 inline-block rounded-lg bg-gradient-to-br from-[#3a5a7a] to-[#2a3a4a] p-3 transition-transform group-hover:scale-110">
+                    <Icon className="h-8 w-8 text-[#D7E2EA]" />
+                  </div>
+
+                  <h3 className="mb-3 font-bold uppercase tracking-wide text-[#D7E2EA]" style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)' }}>
+                    {service.title}
+                  </h3>
+
+                  <p className="mb-6 leading-relaxed text-[#9aa3af]">
+                    {service.description}
+                  </p>
+
+                  <div className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-3">
+                        <div className="h-1.5 w-1.5 rounded-full bg-[#4a7a9a]"></div>
+                        <span className="text-sm text-[#B0B8C4]">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </FadeIn>
+            );
+          })}
+        </div>
+
+        {/* CTA Section */}
+        <FadeIn delay={0.8} y={30} className="mt-16 flex flex-col items-center gap-6 sm:mt-20 md:mt-24">
+          <p className="text-center text-[#B0B8C4]">Ready to bring your project to life?</p>
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="rounded-full border-2 border-[#D7E2EA] bg-gradient-to-r from-[#3a5a7a] to-[#2a3a4a] px-10 py-4 font-medium uppercase tracking-wider text-[#D7E2EA] transition-all hover:border-[#D7E2EA] hover:shadow-xl hover:shadow-blue-900/30"
+          >
+            Get in Touch
+          </motion.a>
+        </FadeIn>
       </div>
     </section>
   );

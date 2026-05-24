@@ -1,99 +1,99 @@
 import React from 'react';
 import { FadeIn } from '../components/FadeIn';
 import { AnimatedText } from '../components/AnimatedText';
+import { Code2, Palette, Zap, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const skills = [
+  { icon: Code2, label: 'Full-Stack Development', desc: 'React, TypeScript, Node.js, Python' },
+  { icon: Palette, label: 'UI/UX Design', desc: 'Tailwind CSS, Framer Motion, Figma' },
+  { icon: Zap, label: 'Performance', desc: 'Optimization, Scalability, Best Practices' },
+  { icon: Users, label: 'Collaboration', desc: 'Team Leadership, Communication, Agile' },
+];
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 py-20 sm:px-8 md:px-10">
-      {/* Decorative Image: Top Left */}
-      <FadeIn
-        delay={0.1}
-        x={-80}
-        y={0}
-        duration={0.9}
-        className="absolute left-[1%] top-[4%] z-0 w-[120px] sm:left-[2%] sm:w-[160px] md:left-[4%] md:w-[210px]"
-      >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png"
-          alt="Moon icon"
-          className="w-full object-contain"
-        />
-      </FadeIn>
+    <section id="about" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#0C0C0C] to-[#1a1a1a] px-4 py-20 sm:px-8 md:px-10">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-0 top-0 h-96 w-96 bg-gradient-to-br from-[#3a6fa8] to-transparent opacity-5 blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 h-96 w-96 bg-gradient-to-tl from-[#2a4a7a] to-transparent opacity-5 blur-3xl"></div>
+      </div>
 
-      {/* Decorative Image: Top Right */}
-      <FadeIn
-        delay={0.15}
-        x={80}
-        y={0}
-        duration={0.9}
-        className="absolute right-[1%] top-[4%] z-0 w-[120px] sm:right-[2%] sm:w-[160px] md:right-[4%] md:w-[210px]"
-      >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/lego_icon-1.703bb594.png"
-          alt="Lego icon"
-          className="w-full object-contain"
-        />
-      </FadeIn>
-
-      {/* Decorative Image: Bottom Left */}
-      <FadeIn
-        delay={0.25}
-        x={-80}
-        y={0}
-        duration={0.9}
-        className="absolute bottom-[8%] left-[3%] z-0 w-[100px] sm:left-[6%] sm:w-[140px] md:left-[10%] md:w-[180px]"
-      >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/p59_1.4659672e.png"
-          alt="3D object"
-          className="w-full object-contain"
-        />
-      </FadeIn>
-
-      {/* Decorative Image: Bottom Right */}
-      <FadeIn
-        delay={0.3}
-        x={80}
-        y={0}
-        duration={0.9}
-        className="absolute bottom-[8%] right-[3%] z-0 w-[130px] sm:right-[6%] sm:w-[170px] md:right-[10%] md:w-[220px]"
-      >
-        <img
-          src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png"
-          alt="3D group"
-          className="w-full object-contain"
-        />
-      </FadeIn>
-
-      <div className="relative z-10 flex flex-col items-center">
+      <div className="relative z-10 flex max-w-5xl flex-col items-center">
+        {/* Section Title */}
         <FadeIn delay={0} y={40} className="w-full text-center">
           <h2 className="hero-heading font-black uppercase leading-none tracking-tight" style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}>
-            About me
+            About Me
           </h2>
         </FadeIn>
 
-        <div className="mt-10 flex flex-col items-center gap-16 sm:mt-14 sm:gap-20 md:mt-16 md:gap-24">
-          <AnimatedText
-            text="Focused on software development, logical problem solving, and clean user experiences, I am driven by the process of building functional and reliable digital products."
-            className="max-w-[560px] text-center font-medium leading-relaxed text-[#D7E2EA]"
-            // we apply inline font size to AnimatedText container
-          />
-          {/* Apply clamp via style directly on the AnimatedText root might need a wrapper if AnimatedText doesn't accept style. 
-              But AnimatedText accepts className, we can use Tailwind arbitrary values or just use a style tag on a wrapper */}
-        </div>
-      </div>
-      
-      {/* { Contact button below the text block. Note: I added it here to keep layout clear } 
-      <div className="relative z-10 mt-16 sm:mt-20 md:mt-24">
-        <FadeIn delay={0.2} y={20}>
-          <ContactButton />
+        {/* Main Description */}
+        <FadeIn delay={0.2} y={30} className="mt-10 w-full sm:mt-14 md:mt-16">
+          <div className="mx-auto max-w-2xl">
+            <AnimatedText
+              text="I'm a full-stack developer passionate about creating premium digital experiences. With expertise in modern technologies and a keen eye for design, I build applications that are not just functional but truly delightful. My focus is on clean code, intuitive interfaces, and delivering real value."
+              className="text-center font-light leading-relaxed text-[#B0B8C4]"
+            />
+          </div>
         </FadeIn>
-      </div> */}
-      
-      {/* Fix animated text styling via inline style on a wrapper */}
+
+        {/* Skills Grid */}
+        <FadeIn delay={0.4} y={30} className="mt-16 w-full sm:mt-20 md:mt-24">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8">
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '50px' }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="group rounded-2xl border border-[#2a3a4a] bg-gradient-to-br from-[#1a1a1a] to-[#0C0C0C] p-6 transition-all duration-300 hover:border-[#4a6a8a] hover:bg-gradient-to-br hover:from-[#1a2a3a] hover:to-[#1a1a1a] sm:p-8"
+                >
+                  <Icon className="mb-4 h-8 w-8 text-[#D7E2EA] transition-transform group-hover:scale-110 sm:h-10 sm:w-10" />
+                  <h3 className="font-semibold uppercase tracking-wide text-[#D7E2EA]" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.2rem)' }}>
+                    {skill.label}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#9aa3af] sm:text-base">{skill.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </FadeIn>
+
+        {/* Stats */}
+        <FadeIn delay={0.6} y={30} className="mt-16 w-full sm:mt-20 md:mt-24">
+          <div className="grid grid-cols-3 gap-4 text-center sm:gap-8 md:gap-12">
+            {[
+              { number: '1', label: 'Project' },
+              { number: '100%', label: 'Optimization' },
+              { number: 'Tech Stack', label: 'Next.js · FastAPI · PostgreSQL' },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '50px' }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                className="rounded-xl border border-[#2a3a4a] bg-[#1a1a1a] p-4 sm:p-6"
+              >
+                <div className="font-black text-[#D7E2EA]" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
+                  {stat.number}
+                </div>
+                <div className="mt-2 text-xs uppercase tracking-wider text-[#9aa3af] sm:text-sm">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+
       <style>{`
         #about p {
-          font-size: clamp(1rem, 2vw, 1.35rem);
+          font-size: clamp(0.95rem, 2vw, 1.3rem);
         }
       `}</style>
     </section>
